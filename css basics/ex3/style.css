@@ -1,0 +1,10 @@
+.sites a{
+    display: inline-flex;
+ 
+    align-items: center;
+}
+
+.sites a img {
+    width: 80px; 
+    height: auto; 
+}

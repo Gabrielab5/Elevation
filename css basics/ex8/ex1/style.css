@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    color: #072b36;
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+h2 {
+    color: #4ba0d1;
+}
+
+h2 + hr {
+    border-color: #4ba0d1;
+}
+
+h3 {
+    color: #7e90dd;
+}
+
+hr {
+    width: 100%;
+    border-width: 1px; 
+    border-style: solid;
+    margin: 10px auto;
+}
+
+strong{
+    color: #761485;
+}
+
+em{
+    color: #188b3e;
+}

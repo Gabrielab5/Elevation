@@ -1,0 +1,139 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #3b82f6; 
+    margin-bottom: 30px;
+}
+
+fieldset {
+    border: 2px solid #aed6f1;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    background-color: #f7fafc;
+}
+
+legend {
+    font-weight: bold;
+    color: #3b82f6;
+    background-color: #ffffff; 
+    padding: 0 10px; 
+    margin-left: 10px; 
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    flex-basis: 120px; 
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-group textarea {
+    resize: vertical; 
+    min-height: 100px;
+    min-width: 300px;
+    text-align: left;
+}
+
+
+.form-group.priority-group,
+.form-group.checkbox-group {
+    align-items: center;
+}
+
+.priority-group .radio-label, 
+.checkbox-group label {
+    flex-basis: auto; 
+    font-weight: normal; 
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+label.full-width {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    margin: 0;
+}
+
+.button-group {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: opacity 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-send {
+    background-color: #28a745; 
+}
+
+.btn-reset {
+    background-color: #dc3545; 
+}
+
+.form-group-vertical {
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+.form-group-vertical label {
+    flex-basis: auto; 
+    margin-bottom: 8px;
+}
+
+.form-group-vertical textarea {
+    width: 80%;
+}

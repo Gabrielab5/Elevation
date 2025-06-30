@@ -1,0 +1,31 @@
+
+body {
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    background-color: #f0f0f0; 
+}
+
+.line-one {
+    font-size: 50px; 
+    color: #f8e091; 
+    font-family: 'Verdana', sans-serif; 
+    margin-bottom: 15px;
+}
+
+.line-two {
+    font-size: 18px;
+    color: #cf54bb;
+    font-family: 'Georgia', serif; 
+    margin-bottom: 15px; 
+
+}
+
+.line-three {
+    font-size: 30px; 
+    color: #40afdb; 
+    font-family: 'Courier New', monospace; 
+    margin-bottom: 15px;
+}

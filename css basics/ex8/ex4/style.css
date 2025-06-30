@@ -1,0 +1,63 @@
+
+body {
+    background-color: #1a1a1a; 
+    color: #e0e0e0; 
+    font-family: 'Source Code Pro', monospace; 
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #00ff7f; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 5px #00ff7f;
+    border-bottom: #00ff7f 2px solid; 
+}
+
+.subtitle {
+    color: #ffd700; 
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse; 
+    border: 3px solid #00ff7f; 
+    background-color: #2d2c2c; 
+    text-align: center;  
+}
+
+thead th {
+    color:  #00ff7f;
+    padding: 15px; 
+    font-weight: 700;
+    border-bottom: 2px solid #00ff7f;
+    border-right: 1px solid #424242; 
+}
+
+
+tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #424242; 
+    border-right: 1px solid #424242; 
+}
+
+tbody td:first-child {
+    color: #ffab40; 
+    font-weight: 700;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #494545; 
+}
+
+footer {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #9e9e9e;
+}

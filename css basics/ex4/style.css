@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#container {
+    background-color: #a0a0a0; 
+    align-items: flex-start; 
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: inline-block;  
+}
+
+#first {
+    background-color: #20b2aa; 
+}
+
+#second {
+    background-color: #ff8c00; 
+}
+
+.prompt {
+    color: black;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 200px;
+    padding:6px;
+}
+
+input[type="number"] {
+    width: 200px;
+}
+
+.button {
+    background-color: #28a745; 
+    color: rgb(0, 0, 0);
+    border: 1px solid #05501e;
+    padding: 6px 15px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

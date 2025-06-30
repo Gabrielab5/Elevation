@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    padding: 20px;
+    background-color:antiquewhite;
+}
+
+h1 {
+    color: #b66022;
+    text-align: center;
+    
+}
+
+h2{
+    background-color: #e0f2fe;
+    color: #4550cc; 
+    padding: 10px;
+    border-left: #4550cc 5px solid;
+}
+
+h3{
+    color: #ca2f14;
+}
+
+h3, strong{
+    color: #ff6347; 
+}
+
+p {
+    font-style: italic; 
+    color: #4b5563;
+    padding-left: 15px; 
+}
+
+ol > li,
+ul > li {
+    margin: 10px; 
+}
+
+.foods {
+    background-color:  #e0f2fe;
+    padding: 5px;            
+    border: 1px solid #cceeff; 
+    border-radius: 8px;     
+}
+
+.hobbies {
+    background-color:  #e0f2fe;
+    padding: 5px;            
+    border: 1px solid #cceeff; 
+    border-radius: 8px;     
+}

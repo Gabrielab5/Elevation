@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Contact Us</h1>
+
+        <form action="#" method="post">
+
+            <fieldset>
+                <legend>Personal Info</legend>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Message</legend>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject">
+                        <option>Select subject</option>
+                        <option>General Inquiry</option>
+                        <option>Technical Support</option>
+                        <option>Feedback</option>
+                    </select>
+                </div>
+                <div class="form-group priority-group">
+                    <label>Priority:</label>
+                    <input type="radio" id="priority_low" name="priority" value="low">
+                    <label for="priority_low" class="radio-label">Low</label>
+                    <input type="radio" id="priority_high" name="priority" value="high">
+                    <label for="priority_high" class="radio-label">High</label>
+                </div>
+                <div class="form-group form-group-vertical">
+                    <label for="message" class="full-width">Message:</label>
+                    <textarea id="message" name="message" placeholder="Your message..." rows="5"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferences</legend>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="subscribe" name="subscribe">
+                    <label for="subscribe">Subscribe to newsletter</label>
+                </div>
+            </fieldset>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-send">Send Message</button>
+                <button type="reset" class="btn btn-reset">Reset</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
