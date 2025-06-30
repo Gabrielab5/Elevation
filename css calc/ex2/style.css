@@ -1,0 +1,12 @@
+
+    .container {
+        display: flex;
+        width: 40%;
+        height: 70px;
+    }
+   
+    .section {
+        width: calc(33.3% );
+        background-color: #c96b74;
+        border: #62171f solid 2px;
+    }
