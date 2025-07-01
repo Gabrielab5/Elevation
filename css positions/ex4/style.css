@@ -1,0 +1,54 @@
+body {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.u-shape {
+  background-color: #d43333;
+  width: 100%;
+  height: 90%;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.cutout {
+  position: absolute;
+  width: 50%;
+  height: 80%;
+  background: white;
+  bottom: 0;
+  left: 25%;
+  top:0;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.top-box {
+  width: 25%;
+  height: 25%;
+  background-color: #b0babe;
+  position: absolute;
+  top: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}

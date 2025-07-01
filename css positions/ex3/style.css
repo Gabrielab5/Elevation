@@ -1,0 +1,82 @@
+
+body{
+    font-family: Arial, sans-serif;
+    margin: auto;
+    padding: 20px;
+    background-color: #f2ecf2;
+}
+
+.chart-container {
+    width: 520px;
+    height: 200px;
+    margin: auto;
+    padding: 70px;
+    background-color: #c13cfa;
+    position: relative;
+
+    border-radius: 10px;
+}
+
+#chart {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background-color: #adacac;
+}
+
+.chart-title{
+    position: absolute;
+    background-color: transparent;
+    color: #000000;
+    padding: 0px 5px;
+    font-size: 24px  
+}
+
+.child {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    background-color: #bdc3c7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#child-1 {
+    height: 50px;
+    left: 40px;
+}
+
+#child-2 {
+    height: 150px;
+    left: 110px;
+}
+
+#child-3 {
+    height: 220px;
+    left: 180px;
+}
+
+#child-4 {
+    height: 200px;
+    left: 250px;
+}
+
+#child-5 {
+    height: 170px;
+    left: 320px;
+}
+
+#child-6 {
+    height: 90px;
+    left: 390px;
+}
+
+#money {
+    top:0;
+    left: 10px;
+}
+
+#time {
+    bottom: 0;
+    right: 10px;
+}
