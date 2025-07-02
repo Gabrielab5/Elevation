@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+    <header class="header">
+      <h1>Contact Form</h1>
+      <p class="subtext">Get in touch with us</p>
+    </header>
+    <form class="fields">
+      <div class="row names">
+        <div class="input-group short">
+          <label for="first-name">First Name</label>
+          <input id="first-name" type="text" placeholder="">
+        </div>
+        <div class="input-group short">
+          <label for="last-name">Last Name</label>
+          <input id="last-name" type="text" placeholder="">
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input id="email" type="email" placeholder="">
+      </div>
+      <div class="row">
+        <div class="input-group short">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="">Select a topic</option>
+            <option value="service">Service</option>
+            <option value="jobs">Jobs</option>
+            <option value="complaint">Complaint</option>
+          </select>
+        </div>
+        <div class="input-group short">
+          <label for="priority">Priority</label>
+          <select id="priority" name="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+      </div>
+      <div class="input-group message">
+        <label for="message">Message</label>
+        <textarea id="message" rows="3" placeholder="Tell us how we can help..."></textarea>
+      </div>
+      <div class="input-group">
+        <label class="contact-label">Contact Preferences</label>
+        <div class="checkbox-row">
+          <label><input type="checkbox" name="contact_preferences" value="email_updates"> Email Updates</label>
+          <label><input type="checkbox" name="contact_preferences" value="phone_followup"> Phone Follow-up</label>
+          <label><input type="checkbox" name="contact_preferences" value="newsletter"> Newsletter</label>
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="button" class="save-draft">Save Draft</button>
+        <button type="submit" class="send-message">Send Message</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
