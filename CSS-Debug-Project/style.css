@@ -57,7 +57,7 @@ body {
     transition: all 0.3s;
 }
 
-.nav-item .active .nav-link {
+.nav-item.active .nav-link {
     background-color: #3498db;
     color: white;
 }
