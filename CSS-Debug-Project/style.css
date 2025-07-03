@@ -41,6 +41,7 @@ body {
 
 .sidebar-nav {
     padding: 1rem 0;
+    width: 100%;
 }
 
 .sidebar-nav ul {
@@ -50,6 +51,7 @@ body {
 .nav-item {
     margin-bottom: 0.5rem;
     padding:10px;
+    width:100%;
 }
 
 .nav-link {
@@ -296,6 +298,7 @@ body {
 
 .progress-bar {
     width: 100%;
+    height: 10px;
     background-color: #e9ecef;
     border-radius: 4px;
     margin: 0.5rem 0;
@@ -359,6 +362,7 @@ body {
     background-color: #f8f9fa;
     border-radius: 0 6px 6px 0;
     margin-bottom: 1rem;
+     border-left: 3px solid #3498db;
 }
 
 .notification-item h5 {
