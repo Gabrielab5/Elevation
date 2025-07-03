@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow Pro - Dashboard (Fixed Version)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">TaskFlow Pro</div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link">📊 Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tasks" class="nav-link">✓ Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">📁 Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link">👥 Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#analytics" class="nav-link">📈 Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#settings" class="nav-link">⚙️ Settings</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="header-bar">
+                <h1 class="page-title">Dashboard</h1>
+                <div class="user-info">
+                    <input type="text" class="search-box" placeholder="Search...">
+                    <div class="user-avatar">JD</div>
+                    <span>John Doe</span>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Active Tasks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">156</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">92%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+            </div>
+            <div class="dashboard-grid">
+                <div class="left-column">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">Recent Tasks</h3>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="task-list">
+                                <li class="task-item">
+                                    <div class="task-info">
+                                        <h4>Update user dashboard</h4>
+                                        <p>Due: Today, 5:00 PM</p>
+                                    </div>
+                                    <span class="task-status status-urgent">Urgent</span>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-info">
+                                        <h4>Review code changes</h4>
+                                        <p>Due: Tomorrow, 2:00 PM</p>
+                                    </div>
+                                    <span class="task-status status-pending">Pending</span>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-info">
+                                        <h4>Team meeting preparation</h4>
+                                        <p>Due: Friday, 9:00 AM</p>
+                                    </div>
+                                    <span class="task-status status-completed">Done</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">Project Progress</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="chart-placeholder">
+                                📊 Chart would go here
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">Quick Actions</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="quick-actions">
+                                <button class="action-btn">+ New Task</button>
+                                <button class="action-btn">+ New Project</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">Team Members</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="team-grid">
+                                <div class="team-member">
+                                    <div class="member-avatar">AM</div>
+                                    <div class="member-info">
+                                        <h5>Alice Miller</h5>
+                                        <div class="member-role">Project Manager</div>
+                                    </div>
+                                    <div class="status-online"></div>
+                                </div>
+                                <div class="team-member">
+                                    <div class="member-avatar">BS</div>
+                                    <div class="member-info">
+                                        <h5>Bob Smith</h5>
+                                        <div class="member-role">Developer</div>
+                                    </div>
+                                    <div class="status-online"></div>
+                                </div>
+                                <div class="team-member">
+                                    <div class="member-avatar">CJ</div>
+                                    <div class="member-info">
+                                        <h5>Carol Johnson</h5>
+                                        <div class="member-role">Designer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">Recent Activity</h3>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="activity-list">
+                                <li class="activity-item">
+                                    <div class="activity-icon">✓</div>
+                                    <div class="activity-content">
+                                        <h5>Task completed</h5>
+                                        <div class="activity-time">2 hours ago</div>
+                                    </div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="activity-icon">👤</div>
+                                    <div class="activity-content">
+                                        <h5>New team member added</h5>
+                                        <div class="activity-time">4 hours ago</div>
+                                    </div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="activity-icon">📊</div>
+                                    <div class="activity-content">
+                                        <h5>Report generated</h5>
+                                        <div class="activity-time">1 day ago</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">Notifications</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="notification-item">
+                                <h5>Project deadline approaching</h5>
+                                <div class="notification-text">Website redesign due in 3 days</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="dashboard-footer">
+                <p>&copy; 2025 TaskFlow Pro. All rights reserved. | Version 2.1.0</p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
