@@ -365,6 +365,7 @@ body {
 .search-box:focus {
     outline: none;
     border-color: #3498db;
+    width:180px;
 }
 
 .dashboard-footer {
