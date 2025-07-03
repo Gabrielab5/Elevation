@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Product Card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-400 to-fuchsia-500 p-6">
+
+  <div class="flex flex-col lg:flex-row bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-5xl">
+    <div class="w-full lg:w-2/5 aspect-[16/9] lg:aspect-auto bg-gradient-to-br from-blue-400 to-fuchsia-500 flex items-center justify-center relative">
+      <div class="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center backdrop-blur-sm text-2xl">
+        📷
+      </div>
+    </div>
+
+  
+    <div class="w-full lg:w-3/5 p-6 lg:p-10">
+      <h1 class="text-2xl font-semibold text-gray-800 mb-4 text-center lg:text-left">Premium Laptop</h1>
+
+      <p class="text-gray-700 text-sm lg:text-base mb-6 text-center lg:text-left">
+        High-performance laptop perfect for developers and designers. Features the latest processor, ample RAM, and a stunning display that brings your work to life.
+      </p>
+
+     
+      <div class="flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+        <div class="text-red-600 text-xl font-bold">$1,299</div>
+        <button class="bg-gradient-to-r from-blue-400 to-fuchsia-500 text-white px-6 py-2 rounded-lg text-sm sm:text-base w-full sm:w-auto">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

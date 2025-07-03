@@ -1,0 +1,37 @@
+
+.container{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display:flex;
+    background-color: aqua;
+    border: 2px solid rgb(225, 235, 235);
+    border-radius: 10%;
+}
+
+@media(max-width:600px){
+  .header{
+    font-size:24px;
+  }
+  .paragraph{
+    font-size:14px;
+  }
+}
+
+@media(min-width:600px){
+  .header{
+    font-size:36px;
+  }
+  .paragraph{
+    font-size:16px;
+  }
+}
+
+@media(min-width:900px){
+  .header{
+    font-size:48px;
+  }
+  .paragraph{
+    font-size:18px;
+  }
+}
