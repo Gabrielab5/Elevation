@@ -251,6 +251,10 @@ body {
     flex: 1;
 }
 
+.action-btn:hover{
+    background-color: #58b0eb;
+}
+
 .activity-list {
     list-style: none;
 }
@@ -294,12 +298,11 @@ body {
     width: 100%;
     background-color: #e9ecef;
     border-radius: 4px;
-    overflow: hidden;
     margin: 0.5rem 0;
+    border:#333;
 }
 
 .progress-fill {
-    width: 0%;
     height: 100%;
     background-color: #27ae60;
     border-radius: 4px;
@@ -390,8 +393,9 @@ body {
     margin-top: 2rem;
     text-align: center;
     color: #7f8c8d;
-    font-size: 0.9rem;
-    bottom: 0;
+    font-size: 0.9rem; 
+    width:100%;
+    margin: -2rem -2rem -2rem -2rem;
 }
 
 .left-column{
