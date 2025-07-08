@@ -1,0 +1,28 @@
+const story = "In the beginning there was light. Then there were wolves. Finally there was a big fire. Ultimately, Shelob the wolf-master put out the fire with her feet. But until then, the fire caused one heck of a lot of damage."
+const specialChars = [",", ".", "'", '"', "?", "!", ";"]
+const wordCounts = {}
+
+function mapString(str){
+    const words = str.split(" ")
+    
+    const cleanWords= words.map(word =>{
+
+        let cleanWord = word.toLowerCase();
+
+        for(const ch of specialChars){
+            cleanWord = cleanWord.replaceAll(ch, "")
+        }
+        return cleanWord
+    })
+
+    return cleanWords;
+}
+
+function countWordsReduce(str) {
+  return str.reduce((counts, word) => {
+    counts[word] = (counts[word] || 0) + 1;
+    return counts;
+  }, {});
+}
+
+console.log(countWordsReduce(mapString(story)))
