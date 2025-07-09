@@ -31,9 +31,11 @@ const coffeeShop = {
 
     if (!drink) {
       console.log("Sorry, we don't make " + drinkType);
-    } else {
+    } else if (this.beans >= drink.beanRequirement) {
       this.money -= drink.price;
       this.makeDrink(drinkType);
+    } else {
+      this.makeDrink(drinkType); 
     }
 }
 }
