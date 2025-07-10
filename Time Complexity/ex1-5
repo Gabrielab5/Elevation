@@ -1,0 +1,11 @@
+Answers:
+1. O(n)
+2. O(logn)
+3. O(1)
+4. O(mn)
+5. O(n)
+
+9.red : O(log(n))
+blue :O(n)
+yellow :(O(n^2))
+green: O(1)
