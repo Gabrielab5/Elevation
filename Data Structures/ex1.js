@@ -1,15 +1,18 @@
 class UniqueArray{
     constructor() {
         this._arr = [];
+        this._set = new Set();
     }
 
     add(item){
-        if (!this.exists(item))
-            this._arr.push(item)
+        if (typeof item !== "object" && !this._set.has(item)) {
+            this._arr.push(item);
+            this._set.add(item);
+    }
     }
 
     exists(item){
-        return this._arr.includes(item)
+        return this._set.has(item)
     }
 
     showAll(){
@@ -17,7 +20,7 @@ class UniqueArray{
     }
 
     get(index){
-        return this._arr[index] ? this._arr[index] : -1
+        return  index >= 0 && index < this._arr.length ? this._arr[index] : -1
     }
 }
 

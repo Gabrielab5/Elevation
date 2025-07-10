@@ -1,54 +1,45 @@
 class UniqueArray{
     constructor() {
         this._arr = [];
+        this._map = new Map();
     }
 
     add(item){
-        if (!this.exists(item))
-            this._arr.push(item)
+        const key = this._hash(item);
+        if (!this._map.has(key)) {
+            this._map.set(key, this._arr.length);
+            this._arr.push(item);
+        }
+    }
+
+    _hash(value) {
+        if (value === null) return "null";
+        if (typeof value !== "object") return `${typeof value}:${value}`;
+        const type = Array.isArray(value) ? "array" : "object";
+        const keys = Object.keys(value).sort(); 
+        let content = "";
+
+        for (let key of keys) {
+            const valHash = this._hash(value[key]); 
+            content += `${key}:${valHash}|`;
+        }
+        return `${type}:{${content}}`;
     }
 
     exists(item) {
-        return this._arr.some(existing => {
-            if (item === existing) return true;
-            if (typeof item !== typeof existing || item === null || existing === null) { return false; }
-            if (Array.isArray(item) && Array.isArray(existing)) {
-                if (item.length !== existing.length) return false;
-                for (let i = 0; i < item.length; i++) 
-                    if (!this._deepEqual(item[i], existing[i])) return false;
-                return true;
-          }
-
-            if (typeof item === 'object') {
-                const keysA = Object.keys(item);
-                const keysB = Object.keys(existing);
-                if (keysA.length !== keysB.length) return false;
-
-                for (let key of keysA) {
-                if (!existing.hasOwnProperty(key)) return false;
-                if (!this._deepEqual(item[key], existing[key])) return false;
-                }
-                return true;
-           }
-            return false;
-    });
-  }
-
-    _deepEqual(a, b) {
-        return this.exists(a, [b]);
+        return this._map.has(this._hash(item));
     }
-
+  
 
     showAll(){
        this._arr.forEach(item => console.log(item))
     }
 
     get(index){
-        return this._arr[index] !== undefined ? this._arr[index] : -1
+        return index >= 0 && index < this._arr.length ? this._arr[index] : -1
     }
 
 }
-
 
 const unique = new UniqueArray();
 
