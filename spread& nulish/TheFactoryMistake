@@ -1,0 +1,10 @@
+let meatArr = ["beef", "chicken"];
+let vegetableArr = ["rabbit", "carrots", "potatoes", "lettuce"];
+
+
+
+meatArr = [...meatArr, "rabbit"];
+vegetableArr = vegetableArr.filter(item => item !== "rabbit");
+
+console.log("Meat:", meatArr);       
+console.log("Vegetables:", vegetableArr);
