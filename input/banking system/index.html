@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>UML - ארכיטקטורת פרונטאנד</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: #f0f0f0;
+      direction: rtl;
+      padding: 2rem;
+    }
+    .mermaid {
+      direction: ltr;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      overflow-x: auto;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>UML - ארכיטקטורת פרונטאנד עם משתנים</h1>
+
+  <div class="mermaid">
+classDiagram
+  direction LR
+
+  class DashboardPage {
+    +invoices: Invoice[]
+    +clients: Client[]
+    +quotes: Quote[]
+    +expenses: Expense[]
+    +goals: Goal[]
+  }
+
+  class ClientsPage {
+    +clients: Client[]
+  }
+
+  class InvoicesPage {
+    +invoices: Invoice[]
+  }
+
+  class ProjectsPage {
+    +projects: Project[]
+  }
+
+  class LeadsPage {
+    +leads: Lead[]
+  }
+
+  class AnalyticsPage {
+    +data: any
+  }
+
+  class ClientForm {
+    +client: Client
+  }
+
+  class InvoiceForm {
+    +invoice: Invoice
+    +linkedQuote: Quote
+  }
+
+  class ProjectForm {
+    +project: Project
+  }
+
+  class QuoteForm {
+    +quote: Quote
+  }
+
+  class LeadForm {
+    +lead: Lead
+  }
+
+  class ClientInteractionForm {
+    +interaction: ClientInteraction
+  }
+
+  class Client {
+    +id: string
+    +name: string
+    +email: string
+    +phone: string
+    +projects: Project[]
+    +invoices: Invoice[]
+  }
+
+  class Invoice {
+    +id: string
+    +clientId: string
+    +date: string
+    +amount: number
+    +status: string
+  }
+
+  class Project {
+    +id: string
+    +clientId: string
+    +name: string
+    +status: string
+    +startDate: string
+    +endDate: string
+  }
+
+  class Quote {
+    +id: string
+    +leadId: string
+    +amount: number
+    +details: string
+  }
+
+  class Lead {
+    +id: string
+    +name: string
+    +email: string
+    +status: string
+  }
+
+  class Expense {
+    +id: string
+    +category: string
+    +amount: number
+    +date: string
+  }
+
+  class Goal {
+    +id: string
+    +name: string
+    +target: number
+    +current: number
+  }
+
+  class ClientInteraction {
+    +id: string
+    +clientId: string
+    +date: string
+    +notes: string
+  }
+
+  %% קשרים (לוגיים)
+  DashboardPage --> Invoice
+  DashboardPage --> Client
+  DashboardPage --> Quote
+  DashboardPage --> Expense
+  DashboardPage --> Goal
+
+  ClientsPage --> Client
+  ClientsPage --> ClientForm
+  ClientsPage --> ClientInteractionForm
+  ClientsPage --> Invoice
+  ClientsPage --> Project
+  ClientForm --> Client
+  ClientInteractionForm --> ClientInteraction
+
+  LeadsPage --> Lead
+  LeadsPage --> LeadForm
+  LeadsPage --> Quote
+  LeadForm --> Lead
+
+  InvoicesPage --> Invoice
+  InvoicesPage --> InvoiceForm
+  InvoiceForm --> Invoice
+  InvoiceForm --> Quote
+
+  ProjectsPage --> Project
+  ProjectsPage --> ProjectForm
+  ProjectForm --> Project
+
+  AnalyticsPage --> Invoice
+  AnalyticsPage --> Expense
+  AnalyticsPage --> Client
+  </div>
+</body>
+</html>
