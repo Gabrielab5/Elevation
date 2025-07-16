@@ -1,3 +1,0 @@
-this is test file
-hello
-new line"This is a line from the beach branch." 
