@@ -63,6 +63,59 @@ class BSNode {
         }
         else return this.value
     }
+    
+    findMaxNode() {
+        if (this.rightChild) 
+            return this.rightChild.findMaxNode()
+        else 
+            return this
+    }
+
+    removeNode(value, parent = null) {
+        if (value < this.value) {
+            if (this.leftChild)  
+                this.leftChild.removeNode(value, this)
+            return
+        } 
+        
+        if (value > this.value) {
+            if (this.rightChild)  
+                this.rightChild.removeNode(value, this)
+            return
+        }
+
+        // node found: 3 scenerios:
+
+        //Node has two children 
+        if (this.leftChild && this.rightChild) {
+            const predecessor = this.leftChild.findMaxNode();
+            this.value = predecessor.value;
+            this.leftChild.removeNode(predecessor.value, this);
+        } 
+
+        //Node has 0 or 1 child (and is the root)
+        else if (parent === null) {
+            if (this.leftChild) {
+                this.value = this.leftChild.value;
+                this.rightChild = this.leftChild.rightChild;
+                this.leftChild = this.leftChild.leftChild;
+            } else if (this.rightChild) {
+                this.value = this.rightChild.value;
+                this.leftChild = this.rightChild.leftChild;
+                this.rightChild = this.rightChild.rightChild;
+            } else {
+                //no tree left
+            }
+        }
+
+        //Node has 0 or 1 child (not the root)
+        else if (parent.leftChild === this) {
+            parent.leftChild = this.leftChild || this.rightChild;
+        } 
+        else if (parent.rightChild === this) {
+            parent.rightChild = this.leftChild || this.rightChild;
+        }
+    }
 }
 
 //ex1
@@ -93,3 +146,16 @@ console.log(bSTree.findCommonParent("B", "G")) //should return "E"
 console.log(bSTree.findCommonParent("B", "L")) //should return "J"
 console.log(bSTree.findCommonParent("L", "Y")) //should return "R"
 console.log(bSTree.findCommonParent("E", "H")) //should return "J"
+
+//ex3
+
+const numbers = [8, 9, 12, 3, 5, 1, 11, 4];
+let nodeWithOneChild = new BSNode();
+numbers.forEach(n => nodeWithOneChild.insertNode(n));
+console.log(nodeWithOneChild.removeNode(nodeWithOneChild, 9)); // will return tree like the first image (the 9 will be deletied) 
+console.log(JSON.stringify(nodeWithOneChild, null, 2));
+
+let nodeWithTwoChildren = new BSNode();
+numbers.forEach(n => nodeWithTwoChildren.insertNode(n));
+console.log(nodeWithTwoChildren.removeNode(nodeWithTwoChildren, 8)); // will return tree like the second image (the root will be 5) 
+console.log(JSON.stringify(nodeWithOneChild, null, 2));
