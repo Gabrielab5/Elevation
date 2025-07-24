@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <h2 id="form-title">Create Your Profile</h2>
+        <form id="profileForm">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Must be more than 2 characters">
+            </div>
+            <div class="input-group">
+                <label for="salary">Desired Salary</label>
+                <input type="number" id="salary" placeholder="Between 10,000 and 16,000">
+            </div>
+            <div class="input-group">
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday">
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="Must be 10 digits">
+            </div>
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
+        <div id="error-messages"></div>
+        <div id="success-message"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
