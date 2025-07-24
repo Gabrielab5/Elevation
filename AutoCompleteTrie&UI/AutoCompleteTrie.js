@@ -3,6 +3,7 @@ class AutoCompleteTrie {
         this.value = value;
         this.children = {};
         this.endOfWord = false;
+        this.wordCount = 0;
     }
 
     addWord(word) {
@@ -13,7 +14,12 @@ class AutoCompleteTrie {
             }
             current = current.children[char];
         }
-        current.endOfWord = true;
+        if (!current.endOfWord) {
+            current.endOfWord = true;
+            this.wordCount++;
+            return true; 
+        }
+        return false;
     }
 
     findWord(word) {

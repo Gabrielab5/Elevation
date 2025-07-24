@@ -25,11 +25,7 @@ import AutoCompleteTrie from './AutoCompleteTrie.js';
          showMessage(failMessage, "Word can only contain letters (a-z).");
          return;
       }
-
       const wasAdded = trie.addWord(word);
-
-      console.log(`'trie.addWord()' returned: ${wasAdded}`);
-    console.log("Current Trie object state:", trie);
       if (wasAdded) {
          showMessage(successMessage, `Successfully added "${word}"!`);
          wordsNumberDisplay.textContent = trie.wordCount;
@@ -45,7 +41,7 @@ import AutoCompleteTrie from './AutoCompleteTrie.js';
        const prefix = suggestInput.value.trim().toLowerCase();
        if (prefix) {
            const suggestions = trie.predictWords(prefix);
-           renderSuggestions(suggestions);
+           renderSuggestions(suggestions, prefix);
        } else {
            suggestionsContainer.innerHTML = '';
        }
@@ -57,15 +53,17 @@ import AutoCompleteTrie from './AutoCompleteTrie.js';
        }
    });
 
-   function renderSuggestions(suggestions) {
+   function renderSuggestions(suggestions, prefix) {
        suggestionsContainer.innerHTML = '';
        suggestions.slice(0, 10).forEach(word => {
            const item = document.createElement('div');
            item.className = 'suggestion-item';
            item.textContent = word;
+           const restOfWord = word.substring(prefix.length);
+           item.innerHTML = `<span class="suggestion-highlight">${prefix}</span>${restOfWord}`;
            item.addEventListener('click', () => {
                suggestInput.value = word;
-               suggestionsContainer.innerHTML = '';
+               suggestionsContainer.innerHTML = word;
            });
            suggestionsContainer.appendChild(item);
        });

@@ -129,6 +129,12 @@ h1 {
     cursor: pointer;
 }
 
+.suggestion-highlight{
+    background-color: #609ff1; 
+    font-weight: 600;
+    border-radius: 3px;
+}
+
 .suggestion-item:hover {
-    background-color: #f0f2f5;
+    background-color: #92aed9;
 }
