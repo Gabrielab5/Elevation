@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auto Complete Trie </title>
+  <link rel="stylesheet" href="style.css" />  
+</head>
+<body>
+  <div class="container">
+    <h1> AutoComplete Trie Web UI</h1>
+        <div class="input-area">
+            <input type="text" id="word-adding-input" placeholder="Enter a word to add to dictionary">
+            <button id="add-word-button">Add word</button>         
+        </div>
+        <div class="message added-word-success" id="success-message"></div>
+        <div class="message added-word-fail" id="fail-message"></div>
+        <div class="input-area">
+            <div class="suggestions-wrapper">
+                <input type="text" id="word-suggest-input" placeholder="Start typing to see suggestions...">
+                <div id="suggestions-container"></div>
+            </div>
+        </div>
+        <div class="dictionary">
+          <div class="words-number" id="words-number"> 0 </div>
+          <div class="words-in-dictionary"> Words in Dictionary</div> 
+           </div> 
+    </div>
+  <script type="module" src="Trie.js" ></script>
+</body>
+</html>
