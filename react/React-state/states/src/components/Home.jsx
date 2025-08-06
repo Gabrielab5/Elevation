@@ -1,7 +1,7 @@
 import React from 'react';
 import Item from './Item';
 
-function Home({ store}){
+function Home({ store, shouldDiscount}){
     return (
     <div className="p-4">
       <h2 className="text-2xl font-bold text-gray-700 mb-6 text-center">
@@ -9,7 +9,7 @@ function Home({ store}){
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {store.map(product => (
-          <Item key={product.id} item={product.item} price={product.price} />
+          <Item key={product.id} item={product.item} price={product.price} shouldDiscount={shouldDiscount} discount ={product.discount}/>
         ))}
       </div>
       {store.length === 0 && (

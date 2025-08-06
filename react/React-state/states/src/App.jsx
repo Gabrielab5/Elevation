@@ -47,7 +47,7 @@ function App() {
         {data.currentPage === "Landing" ? (
           <Landing user={data.user} hottestItem={hottestItem} />
         ) : (
-          <Home store={data.store} />
+          <Home store={data.store} shouldDiscount={data.shouldDiscount} />
         )}
       </div>
     </div>
