@@ -36,7 +36,7 @@ function Excercise2() {
  return (
     <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-8 max-w-sm w-full">
       {chatState.displayConversation === null ? 
-       ( <List chatState={chatState} setChatState={setChatState} contacts={}/> )
+       ( <List chatState={chatState} setChatState={setChatState} /> )
      : ( <Conversation chatState={chatState} /> )}
     </div>
   );
