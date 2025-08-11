@@ -33,11 +33,23 @@ function Excercise2() {
     ]
 })
 
- return (
+const displayConvo = (name) => {
+    setChatState(prevState => ({ ...prevState, displayConversation: name }));
+};
+
+const goBackToList = () => {
+    setChatState(prevState => ({ ...prevState, displayConversation: null }));
+};
+
+const currentConversation = chatState.conversations.find(
+    (convo) => convo.with === chatState.displayConversation
+);
+
+return (
     <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-8 max-w-sm w-full">
       {chatState.displayConversation === null ? 
-       ( <List chatState={chatState} setChatState={setChatState} /> )
-     : ( <Conversation chatState={chatState} /> )}
+       ( <List conversations={chatState.conversations} onSelectContact={displayConvo}/> )
+     : ( <Conversation  convo={currentConversation.convo} senderName={currentConversation.with} onBack={goBackToList} /> )}
     </div>
   );
 }
