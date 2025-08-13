@@ -36,6 +36,7 @@ export default function ShoppingCart() {
                 image={item.image} 
               />
               <button onClick={() => addItem(item)}>Add</button>
+              
               <button onClick={() => removeItem(item.id)}>Remove</button>
             </div>
           ))}

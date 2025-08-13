@@ -9,14 +9,18 @@ export default function cartReducer(state, action) {
                 itemCount: state.itemCount + 1,
             }; }
         case 'REMOVE_ITEM':
-            { const removedItem = state.items.find(item => item.id === action.id);
+            {const itemIndex =state.items.findIndex( item => item.id === action.id)
+            if(itemIndex === -1) return state;
+            const removedItem = state.items[itemIndex];
             if (!removedItem) return state;
-            const filteredItems = state.items.filter(item => item.id !== action.id);
+            const filteredItems = [...state.items.slice(0, itemIndex), ...state.items.slice(itemIndex+1)];
+            const newTotal = state.total - removedItem.price;
+            const newItemCount = state.itemCount -1;
             return {
                 ...state,
                 items: filteredItems,
-                total: state.total - removedItem.price >=0 ? state.total - removedItem.price : 0,
-                itemCount: state.itemCount - 1 >= 0 ? state.itemCount - 1 : 0,
+                total: newTotal > 0 ? newTotal : 0,
+                itemCount: newItemCount >0 ? newItemCount : 0,
             }; }
         case 'CLEAR_CART': {
             return {
