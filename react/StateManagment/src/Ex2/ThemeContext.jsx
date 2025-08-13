@@ -1,11 +1,19 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light');
-  const [fontSize, setFontSize] = useState('medium')
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const [fontSize, setFontSize] = useState(() => localStorage.getItem('fontSize') || 'medium')
+  
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    localStorage.setItem('fontSize', fontSize);
+  }, [fontSize]);
 
   const value = {
     theme,
