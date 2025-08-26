@@ -44,3 +44,15 @@ app.get('/buy/:name',(req,res) => {
         res.status(400).json({ error: "Item not found"});
     }
 })
+
+app.get('/sale',(req,res) => {
+    const isAdmin= req.params.admin === 'true';
+
+    if (isAdmin) {
+        store.forEach(item => 
+            {if (item.inventory > 10) {
+                item.price = item.price / 2;
+            }})
+    }
+    res.send(store);
+})
