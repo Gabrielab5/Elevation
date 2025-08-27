@@ -1,5 +1,36 @@
 let money = 1500
 
+let lastChairPrice = null;
+
+setInterval(async () => {
+        try {
+            const response = await fetch('/priceCheck/chair');
+            const data = await response.json();
+            const currentPrice = data.price;
+
+            // Check if the price has dropped from the last time we checked
+            if (lastChairPrice !== null && currentPrice < lastChairPrice) {
+                // If the price is lower, make the purchase
+                const buyResponse = await fetch('/buy/chair');
+                const buyData = await buyResponse.json();
+                
+                if (buyData.error) {
+                    console.error('Error buying chair:', buyData.error);
+                } else {
+                    console.log(`bought chair for less`);
+                    money -= currentPrice;
+                    updateMoneyDisplay();
+                }
+            } else {
+                console.log("still waiting for a price drop...");
+            }
+            lastChairPrice = currentPrice;
+
+        } catch (error) {
+            console.error('Error in price check interval:', error);
+        }
+}, 3000);
+
 document.addEventListener('DOMContentLoaded', () => {
     const priceCheckBtn = document.getElementById('priceCheckBtn');
     const buyBtn = document.getElementById('buyBtn');
@@ -100,4 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
             buyResultDiv.classList.remove('text-green-600');
         }
     });
+
 });
+
