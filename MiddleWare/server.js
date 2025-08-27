@@ -1,5 +1,5 @@
 const express = require('express')
-
+const { validatePost } = require('./validation/validationMiddleware')
 const app = express()
 const port = 3000
 let requestCount = 0
@@ -80,6 +80,10 @@ app.get('/users/:id', validateIdMiddleware, checkResourceExists, (req, res) => {
 app.post('/users', (req, res) => {
   res.status(201).json({ message: 'User created successfully' })
 })
+
+app.post('/posts', validatePost, (req, res) => {
+  res.status(201).json({ message: 'Post created successfully' });
+});
 
 app.use(errorHandler)
 
