@@ -1,14 +1,23 @@
 const express = require('express')
-const { validatePost } = require('./validation/validationMiddleware')
+const { validationResult } = require('express-validator')
+const { validatePost, checkPostExists } = require('./validation/validationMiddleware')
+const { commentValidationRules } = require('./validation/commentValidation')
 const app = express()
 const port = 3000
 let requestCount = 0
+app.use(express.json())
 
 // Test data
 const users = [
   { id: 1, name: 'John' },
   { id: 2, name: 'Jane' },
 ]
+
+// Test data for posts
+const posts = [
+  { id: 1, title: 'My First Post', content: 'This is the content...', tags: ['javascript', 'nodejs'] },
+  { id: 2, title: 'Another Great Post', content: 'More amazing content here.', tags: ['express', 'web-dev'] },
+];
 
 const loggerMiddleware = (req, res, next) => {
   const timestamp = new Date().toISOString()
@@ -84,6 +93,20 @@ app.post('/users', (req, res) => {
 app.post('/posts', validatePost, (req, res) => {
   res.status(201).json({ message: 'Post created successfully' });
 });
+
+app.post('/posts/:postId/comments', commentValidationRules(), checkPostExists, (req, res) => {
+  const errors = validationResult(req)
+  if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array()})
+  res.status(201).json({ message: `Comment added to post ${req.post.id}` });
+});
+
+app.get('/posts/:postId/comments', validateIdMiddleware, (req, res) => {
+    res.json({
+        postId: req.parsedId,
+        comments: []
+    });
+});
+
 
 app.use(errorHandler)
 
