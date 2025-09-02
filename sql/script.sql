@@ -19,3 +19,5 @@ CREATE TABLE IF NOT EXISTS student_teacher(
     FOREIGN KEY (student_id) REFERENCES student(s_id),
     FOREIGN KEY (teacher_id) REFERENCES teacher(t_id),
 )
+
+CREATE DATABASE IF NOT EXISTS pokecorp;
